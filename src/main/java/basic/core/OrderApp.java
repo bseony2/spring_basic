@@ -5,13 +5,13 @@ import basic.core.member.Member;
 import basic.core.member.MemberService;
 import basic.core.member.MemberServiceImpl;
 import basic.core.order.Order;
-import basic.core.order.OrderSErviceImpl;
+import basic.core.order.OrderServiceImpl;
 import basic.core.order.OrderService;
 
 public class OrderApp {
     public static void main(String[] args) {
         MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderSErviceImpl();
+        OrderService orderService = new OrderServiceImpl();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);

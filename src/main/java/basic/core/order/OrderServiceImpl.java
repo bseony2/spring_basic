@@ -7,7 +7,7 @@ import basic.core.member.MemberRepository;
 import basic.core.member.MemberService;
 import basic.core.member.MemoryMemberRepository;
 
-public class OrderSErviceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
     private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
