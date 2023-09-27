@@ -2,7 +2,9 @@ package basic.core.scan;
 
 
 import basic.core.AutoAppConfig;
+import basic.core.member.MemberRepository;
 import basic.core.member.MemberService;
+import basic.core.order.OrderServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -15,5 +17,9 @@ public class AutoAppConfigTest {
 
         MemberService memberService = ac.getBean(MemberService.class);
         assertThat(memberService).isInstanceOf(MemberService.class);
+
+        OrderServiceImpl bean = ac.getBean(OrderServiceImpl.class);
+        MemberRepository memberRepository = bean.getMemberRepository();
+        System.out.println("memberRepository = " + memberRepository);
     }
 }

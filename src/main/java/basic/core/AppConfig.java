@@ -1,7 +1,6 @@
 package basic.core;
 
 import basic.core.discount.DiscountPolicy;
-import basic.core.discount.FixDiscountPolicy;
 import basic.core.discount.RateDiscountPolicy;
 import basic.core.member.MemberService;
 import basic.core.member.MemberServiceImpl;
@@ -29,8 +28,8 @@ public class AppConfig {
     @Bean
     public OrderService orderService() {
         System.out.println("Call AppConfig.orderService");
-        //return new OrderServiceImpl(memberRepository(), discountPolicy());
-        return null;
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
+        //return null;
     }
 
     @Bean
